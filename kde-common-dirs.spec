@@ -28,8 +28,14 @@ install -d \
     $RPM_BUILD_ROOT%{_docdir}/kde \
     $RPM_BUILD_ROOT%{_kdedocdir}/en \
     $RPM_BUILD_ROOT%{_desktopdir}/kde \
-    $RPM_BUILD_ROOT%{_libdir}/kconf_update_bin
-
+    $RPM_BUILD_ROOT%{_libdir}/kconf_update_bin \
+    $RPM_BUILD_ROOT%{_datadir}/apps/kde \
+    $RPM_BUILD_ROOT%{_datadir}/apps/khtml/css \
+    $RPM_BUILD_ROOT%{_datadir}/apps/kjava \
+    $RPM_BUILD_ROOT%{_datadir}/usr/share/config/ui \
+    $RPM_BUILD_ROOT%{_datadir}/apps/kconf_update \
+    $RPM_BUILD_ROOT%{_datadir}/apps/kstyle/themes \
+    $RPM_BUILD_ROOT%{_datadir}/emoticons
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -39,6 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/applnk
 %dir %{_datadir}/applnk/.hidden
 %dir %{_datadir}/apps
+%dir %{_datadir}/apps/kde
 %dir %{_datadir}/apps/kconf_update
 %dir %{_datadir}/apps/profiles
 %dir %{_datadir}/apps/remotes
@@ -50,3 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_kdedocdir}/en
 %dir %{_desktopdir}/kde
 %dir %{_libdir}/kconf_update_bin
+%dir %{_datadir}/apps/kstyle
+%dir %{_datadir}/apps/kstyle/themes
+%dir %{_datadir}/emoticons
