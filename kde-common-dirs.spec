@@ -1,4 +1,3 @@
-#
 Summary:	K Desktop Environment - common directories
 Name:		kde-common-dirs
 Version:	0.1
@@ -11,10 +10,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 KDE3 & KDE4 common directories.
 
+%prep
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d \
     $RPM_BUILD_ROOT%{_datadir}/applnk/.hidden \
     $RPM_BUILD_ROOT%{_datadir}/apps/{kconf_update,profiles,remotes} \
