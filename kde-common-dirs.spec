@@ -12,10 +12,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 KDE3 & KDE4 common directories.
 
 
-%prep
-
-%build
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
