@@ -45,7 +45,8 @@ cd $RPM_BUILD_ROOT
 check_filesystem_dirs() {
 	RPMFILE=%{name}-%{version}-%{release}.%{_target_cpu}.rpm
 	TMPFILE=$(mktemp)
-	find | sed -e 's|^\.||g' -e 's|^$||g' | LC_ALL=C sort > $TMPFILE
+	# NOTE: we must exclude from check all existing dirs belonging to FHS
+	find | sed -e 's|^\.||g' -e 's|^$||g' | LC_ALL=C sort | grep -v $TMPFILE | grep -E -v '^/(etc|etc/X11|home|lib|lib64|usr|usr/include|usr/lib|usr/lib64|usr/share|usr/share/doc|usr/share/applications|usr/share/man|usr/share/man/pl|usr/src|var|var/lock)$' > $TMPFILE
 
 	# find finds also '.', so use option -B for diff
 	if rpm -qpl %{_rpmdir}/$RPMFILE | grep -v '^/$' | LC_ALL=C sort | diff -uB $TMPFILE - ; then
@@ -65,6 +66,7 @@ check_filesystem_dirs
 %dir %{_datadir}/applnk/.hidden
 %dir %{_datadir}/apps
 %dir %{_datadir}/apps/kde
+%dir %{_datadir}/apps/kjava
 %dir %{_datadir}/apps/khtml
 %dir %{_datadir}/apps/khtml/css
 %dir %{_datadir}/apps/kconf_update
