@@ -4,8 +4,8 @@
 Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
-Version:	0.1
-Release:	2
+Version:	0.2
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
@@ -37,15 +37,16 @@ install -d \
 	$RPM_BUILD_ROOT%{_datadir}/config.kcfg \
 	$RPM_BUILD_ROOT%{_datadir}/emoticons \
 	$RPM_BUILD_ROOT%{_docdir}/kde \
-	$RPM_BUILD_ROOT%{_kdedocdir}/en \
-	$RPM_BUILD_ROOT%{_desktopdir}/kde
+	$RPM_BUILD_ROOT%{_desktopdir}/kde \
+	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,es,et,fi,fr,hu,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,uk,zh_TW}/common \
+	$RPM_BUILD_ROOT%{_kdedocdir}/en/kcontrol
 
 %clean
 cd $RPM_BUILD_ROOT
 check_filesystem_dirs() {
 	RPMFILE=%{name}-%{version}-%{release}.%{_target_cpu}.rpm
 	TMPFILE=$(mktemp)
-	# NOTE: we must exclude from check all existing dirs belonging to FHS
+	# NOTE:	we must exclude from check all existing dirs belonging to FHS
 	find | sed -e 's|^\.||g' -e 's|^$||g' | LC_ALL=C sort | grep -v $TMPFILE | grep -E -v '^/(usr|usr/lib|usr/lib64|usr/share|usr/share/doc|usr/share/applications)$' > $TMPFILE
 
 	# find finds also '.', so use option -B for diff
@@ -82,5 +83,57 @@ check_filesystem_dirs
 %dir %{_datadir}/services
 %dir %{_docdir}/kde
 %dir %{_kdedocdir}
-%dir %{_kdedocdir}/en
 %dir %{_desktopdir}/kde
+%lang(ca) %dir %{_kdedocdir}/ca
+%lang(ca) %dir %{_kdedocdir}/ca/common
+%lang(cs) %dir %{_kdedocdir}/cs
+%lang(cs) %dir %{_kdedocdir}/cs/common
+%lang(da) %dir %{_kdedocdir}/da
+%lang(da) %dir %{_kdedocdir}/da/common
+%lang(de) %dir %{_kdedocdir}/de
+%lang(de) %dir %{_kdedocdir}/de/common
+%lang(en) %dir %{_kdedocdir}/en
+%lang(en) %dir %{_kdedocdir}/en/common
+%lang(en) %dir %{_kdedocdir}/en/kcontrol
+%lang(es) %dir %{_kdedocdir}/es
+%lang(es) %dir %{_kdedocdir}/es/common
+%lang(en_GB) %dir %{_kdedocdir}/en_GB
+%lang(en_GB) %dir %{_kdedocdir}/en_GB/common
+%lang(et) %dir %{_kdedocdir}/et
+%lang(et) %dir %{_kdedocdir}/et/common
+%lang(fi) %dir %{_kdedocdir}/fi
+%lang(fi) %dir %{_kdedocdir}/fi/common
+%lang(fr) %dir %{_kdedocdir}/fr
+%lang(fr) %dir %{_kdedocdir}/fr/common
+%lang(hu) %dir %{_kdedocdir}/hu
+%lang(hu) %dir %{_kdedocdir}/hu/common
+%lang(it) %dir %{_kdedocdir}/it
+%lang(it) %dir %{_kdedocdir}/it/common
+%lang(ja) %dir %{_kdedocdir}/ja
+%lang(ja) %dir %{_kdedocdir}/ja/common
+%lang(nb) %dir %{_kdedocdir}/nb
+%lang(nb) %dir %{_kdedocdir}/nb/common
+%lang(nl) %dir %{_kdedocdir}/nl
+%lang(nl) %dir %{_kdedocdir}/nl/common
+%lang(pl) %dir %{_kdedocdir}/pl
+%lang(pl) %dir %{_kdedocdir}/pl/common
+%lang(pt) %dir %{_kdedocdir}/pt
+%lang(pt) %dir %{_kdedocdir}/pt/common
+%lang(pt_BR) %dir %{_kdedocdir}/pt_BR
+%lang(pt_BR) %dir %{_kdedocdir}/pt_BR/common
+%lang(ro) %dir %{_kdedocdir}/ro
+%lang(ro) %dir %{_kdedocdir}/ro/common
+%lang(ru) %dir %{_kdedocdir}/ru
+%lang(ru) %dir %{_kdedocdir}/ru/common
+%lang(sk) %dir %{_kdedocdir}/sk
+%lang(sk) %dir %{_kdedocdir}/sk/common
+%lang(sl) %dir %{_kdedocdir}/sl
+%lang(sl) %dir %{_kdedocdir}/sl/common
+%lang(sv) %dir %{_kdedocdir}/sv
+%lang(sv) %dir %{_kdedocdir}/sv/common
+%lang(tr) %dir %{_kdedocdir}/tr
+%lang(tr) %dir %{_kdedocdir}/tr/common
+%lang(uk) %dir %{_kdedocdir}/uk
+%lang(uk) %dir %{_kdedocdir}/uk/common
+%lang(zh_TW) %dir %{_kdedocdir}/zh_TW
+%lang(zh_TW) %dir %{_kdedocdir}/zh_TW/common
