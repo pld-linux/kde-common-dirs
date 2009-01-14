@@ -99,8 +99,8 @@ check_filesystem_dirs
 %lang(es) %dir %{_kdedocdir}/es/common
 %lang(en_GB) %dir %{_kdedocdir}/en_GB
 %lang(en_GB) %dir %{_kdedocdir}/en_GB/common
-%lang(en_GB) %dir %{_kdedocdir}/en_US
-%lang(en_GB) %dir %{_kdedocdir}/en_US/common
+%lang(en_US) %dir %{_kdedocdir}/en_US
+%lang(en_US) %dir %{_kdedocdir}/en_US/common
 %lang(et) %dir %{_kdedocdir}/et
 %lang(et) %dir %{_kdedocdir}/et/common
 %lang(fi) %dir %{_kdedocdir}/fi
