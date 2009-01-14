@@ -5,7 +5,7 @@ Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
 Version:	0.2
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
@@ -38,7 +38,7 @@ install -d \
 	$RPM_BUILD_ROOT%{_datadir}/emoticons \
 	$RPM_BUILD_ROOT%{_docdir}/kde \
 	$RPM_BUILD_ROOT%{_desktopdir}/kde \
-	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,es,et,fi,fr,hu,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,uk,zh_TW}/common \
+	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,hu,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,uk,zh_TW}/common \
 	$RPM_BUILD_ROOT%{_kdedocdir}/en/kcontrol
 
 %clean
@@ -99,6 +99,8 @@ check_filesystem_dirs
 %lang(es) %dir %{_kdedocdir}/es/common
 %lang(en_GB) %dir %{_kdedocdir}/en_GB
 %lang(en_GB) %dir %{_kdedocdir}/en_GB/common
+%lang(en_GB) %dir %{_kdedocdir}/en_US
+%lang(en_GB) %dir %{_kdedocdir}/en_US/common
 %lang(et) %dir %{_kdedocdir}/et
 %lang(et) %dir %{_kdedocdir}/et/common
 %lang(fi) %dir %{_kdedocdir}/fi
