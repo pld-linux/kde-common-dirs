@@ -4,7 +4,7 @@
 Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
-Version:	0.3
+Version:	0.4
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
@@ -36,6 +36,7 @@ install -d \
 	$RPM_BUILD_ROOT%{_datadir}/config/ui \
 	$RPM_BUILD_ROOT%{_datadir}/config.kcfg \
 	$RPM_BUILD_ROOT%{_datadir}/emoticons \
+	$RPM_BUILD_ROOT%{_iconsdir}/oxygen/{16x16,22x22,32x32,48x48,64x64,128x128}/{actions,animations,apps,categories,devices,emblems,emotes,mimetypes,places,status} \
 	$RPM_BUILD_ROOT%{_docdir}/kde \
 	$RPM_BUILD_ROOT%{_desktopdir}/kde \
 	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,hu,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,uk,zh_TW}/common \
@@ -47,7 +48,7 @@ check_filesystem_dirs() {
 	RPMFILE=%{name}-%{version}-%{release}.%{_target_cpu}.rpm
 	TMPFILE=$(mktemp)
 	# NOTE:	we must exclude from check all existing dirs belonging to FHS
-	find | sed -e 's|^\.||g' -e 's|^$||g' | LC_ALL=C sort | grep -v $TMPFILE | grep -E -v '^/(usr|usr/lib|usr/lib64|usr/share|usr/share/doc|usr/share/applications)$' > $TMPFILE
+	find | sed -e 's|^\.||g' -e 's|^$||g' | LC_ALL=C sort | grep -v $TMPFILE | grep -E -v '^/(usr|usr/lib|usr/lib64|usr/share|usr/share/doc|usr/share/applications|usr/share/icons)$' > $TMPFILE
 
 	# find finds also '.', so use option -B for diff
 	if rpm -qpl %{_rpmdir}/$RPMFILE | grep -v '^/$' | LC_ALL=C sort | diff -uB $TMPFILE -; then
@@ -84,6 +85,8 @@ check_filesystem_dirs
 %dir %{_docdir}/kde
 %dir %{_kdedocdir}
 %dir %{_desktopdir}/kde
+%dir %{_iconsdir}/oxygen
+%{_iconsdir}/oxygen/*
 %lang(ca) %dir %{_kdedocdir}/ca
 %lang(ca) %dir %{_kdedocdir}/ca/common
 %lang(cs) %dir %{_kdedocdir}/cs
