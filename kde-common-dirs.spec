@@ -4,8 +4,8 @@
 Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
-Version:	0.4
-Release:	2
+Version:	0.5
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
@@ -37,6 +37,7 @@ install -d \
 	$RPM_BUILD_ROOT%{_datadir}/config.kcfg \
 	$RPM_BUILD_ROOT%{_datadir}/emoticons \
 	$RPM_BUILD_ROOT%{_iconsdir}/oxygen/{8x8,16x16,22x22,32x32,48x48,64x64,128x128}/{actions,animations,apps,categories,devices,emblems,emotes,mimetypes,places,status} \
+	$RPM_BUILD_ROOT%{_iconsdir}/crystalsvg/{8x8,16x16,22x22,32x32,48x48,64x64,128x128}/{actions,animations,apps,categories,devices,emblems,emotes,mimetypes,places,status} \
 	$RPM_BUILD_ROOT%{_docdir}/kde \
 	$RPM_BUILD_ROOT%{_desktopdir}/kde \
 	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,hu,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,uk,zh_TW}/common \
@@ -87,6 +88,8 @@ check_filesystem_dirs
 %dir %{_desktopdir}/kde
 %dir %{_iconsdir}/oxygen
 %{_iconsdir}/oxygen/*
+%dir %{_iconsdir}/crystalsvg
+%{_iconsdir}/crystalsvg/*
 %lang(ca) %dir %{_kdedocdir}/ca
 %lang(ca) %dir %{_kdedocdir}/ca/common
 %lang(cs) %dir %{_kdedocdir}/cs
