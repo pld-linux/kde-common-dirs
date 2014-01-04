@@ -5,7 +5,7 @@ Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
 Version:	0.8
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
@@ -57,7 +57,7 @@ check_filesystem_dirs() {
 	RPMFILE=%{name}-%{version}-%{release}.%{_target_cpu}.rpm
 	TMPFILE=$(mktemp)
 	# NOTE:	we must exclude from check all existing dirs belonging to FHS
-	find | sed -e 's|^\.||g' -e 's|^$||g' | LC_ALL=C sort | grep -v $TMPFILE | grep -E -v '^/(usr|usr/lib|usr/lib64|usr/share|usr/share/doc|usr/share/applications|usr/share/icons)$' > $TMPFILE
+	find | sed -e 's|^\.||g' -e 's|^$||g' | LC_ALL=C sort | grep -v $TMPFILE | grep -E -v '^/(usr|usr/lib|usr/lib64|usr/share|usr/share/doc|usr/share/applications|usr/share/icons|usr/lib/qt4|usr/lib64/qt4|usr/lib/qt4/imports|usr/lib64/qt4/imports|usr/lib/qt4/imports/org|usr/lib64/qt4/imports/org)$' > $TMPFILE
 
 	# find finds also '.', so use option -B for diff
 	if rpm -qpl %{_rpmdir}/$RPMFILE | grep -v '^/$' | LC_ALL=C sort | diff -uB $TMPFILE -; then
