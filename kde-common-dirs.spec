@@ -4,7 +4,7 @@
 Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
-Version:	0.7
+Version:	0.8
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
@@ -26,6 +26,8 @@ install -d \
 	$RPM_BUILD_ROOT%{_libdir}/kde4 \
 	$RPM_BUILD_ROOT%{_libdir}/kde4/plugins \
 	$RPM_BUILD_ROOT%{_libdir}/kde4/imports/org/kde \
+	$RPM_BUILD_ROOT%{_libdir}/qt4/imports/org/kde \
+	$RPM_BUILD_ROOT%{_libdir}/qt4/imports/org/kde/edu \
 	$RPM_BUILD_ROOT%{_datadir}/kde4 \
 	$RPM_BUILD_ROOT%{_datadir}/kde4/services \
 	$RPM_BUILD_ROOT%{_datadir}/applnk/.hidden \
