@@ -1,18 +1,19 @@
-# avoid rpm 4.4.9 adding rm -rf buildroot, we need the dirs to check consistency
-%define		__spec_clean_body	%{nil}
-%define		_enable_debug_packages	0
 Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
 Version:	0.8
-Release:	3
+Release:	4
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_enable_debug_packages	0
+# avoid rpm 4.4.9 adding rm -rf buildroot, we need the dirs to check consistency
+%define		__spec_clean_body	%{nil}
+
 %description
-KDE 3 & KDE 4 common directories.
+KDE common directories.
 
 %description -l pl.UTF-8
 Katalogi wspólne dla KDE 3 i KDE 4.
@@ -56,8 +57,8 @@ cd $RPM_BUILD_ROOT
 check_filesystem_dirs() {
 	RPMFILE=%{name}-%{version}-%{release}.%{_target_cpu}.rpm
 	TMPFILE=$(mktemp)
-	# NOTE:	we must exclude from check all existing dirs belonging to FHS
-	find | sed -e 's|^\.||g' -e 's|^$||g' | LC_ALL=C sort | grep -v $TMPFILE | grep -E -v '^/(usr|usr/lib|usr/lib64|usr/share|usr/share/doc|usr/share/applications|usr/share/icons|usr/lib/qt4|usr/lib64/qt4|usr/lib/qt4/imports|usr/lib64/qt4/imports|usr/lib/qt4/imports/org|usr/lib64/qt4/imports/org)$' > $TMPFILE
+	# NOTE:	we must exclude from check all existing dirs belonging to FHS and qt4
+	find | sed -e 's|^\.||g' -e 's|^$||g' | LC_ALL=C sort | grep -v $TMPFILE | grep -E -v '^/(usr|usr/%{_lib}|usr/share|usr/share/doc|usr/share/applications|usr/share/icons|usr/%{_lib}/qt4|usr/%{_lib}/qt4/imports|usr/%{_lib}/qt4/imports/org)$' > $TMPFILE
 
 	# find finds also '.', so use option -B for diff
 	if rpm -qpl %{_rpmdir}/$RPMFILE | grep -v '^/$' | LC_ALL=C sort | diff -uB $TMPFILE -; then
