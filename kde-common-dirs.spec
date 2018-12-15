@@ -2,7 +2,7 @@ Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
 Version:	0.8
-Release:	5
+Release:	6
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
@@ -47,6 +47,7 @@ install -d \
 	$RPM_BUILD_ROOT%{_datadir}/config.kcfg \
 	$RPM_BUILD_ROOT%{_datadir}/emoticons \
 	$RPM_BUILD_ROOT%{_iconsdir}/oxygen/{8x8,16x16,22x22,32x32,48x48,64x64,128x128,512x512}/{actions,animations,apps,categories,devices,emblems,emotes,mimetypes,places,special,status} \
+	$RPM_BUILD_ROOT%{_iconsdir}/oxygen/scalable \
 	$RPM_BUILD_ROOT%{_iconsdir}/crystalsvg/{8x8,16x16,22x22,32x32,48x48,64x64,128x128,512x512}/{actions,animations,apps,categories,devices,emblems,emotes,mimetypes,places,special,status} \
 	$RPM_BUILD_ROOT%{_docdir}/kde \
 	$RPM_BUILD_ROOT%{_desktopdir}/kde \
