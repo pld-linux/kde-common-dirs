@@ -2,7 +2,7 @@ Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
 Version:	0.8
-Release:	7
+Release:	8
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
@@ -50,7 +50,7 @@ install -d \
 	$RPM_BUILD_ROOT%{_iconsdir}/crystalsvg/{8x8,16x16,22x22,32x32,48x48,64x64,128x128,512x512}/{actions,animations,apps,categories,devices,emblems,emotes,mimetypes,places,special,status} \
 	$RPM_BUILD_ROOT%{_docdir}/kde \
 	$RPM_BUILD_ROOT%{_desktopdir}/kde \
-	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,hu,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,uk,zh_TW}/common \
+	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,gl,hu,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,uk,zh_TW}/common \
 	$RPM_BUILD_ROOT%{_kdedocdir}/en/kcontrol
 
 %clean
@@ -134,6 +134,8 @@ check_filesystem_dirs
 %lang(fi) %dir %{_kdedocdir}/fi/common
 %lang(fr) %dir %{_kdedocdir}/fr
 %lang(fr) %dir %{_kdedocdir}/fr/common
+%lang(gl) %dir %{_kdedocdir}/gl
+%lang(gl) %dir %{_kdedocdir}/gl/common
 %lang(hu) %dir %{_kdedocdir}/hu
 %lang(hu) %dir %{_kdedocdir}/hu/common
 %lang(it) %dir %{_kdedocdir}/it
