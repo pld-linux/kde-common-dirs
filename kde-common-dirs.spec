@@ -2,7 +2,7 @@ Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
 Version:	0.8
-Release:	8
+Release:	9
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
@@ -13,10 +13,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		__spec_clean_body	%{nil}
 
 %description
-KDE common directories.
+KDE 3/4/5 common directories.
 
 %description -l pl.UTF-8
-Katalogi wspólne dla KDE 3 i KDE 4.
+Katalogi wspólne dla KDE 3/4/5.
 
 %prep
 
@@ -50,7 +50,7 @@ install -d \
 	$RPM_BUILD_ROOT%{_iconsdir}/crystalsvg/{8x8,16x16,22x22,32x32,48x48,64x64,128x128,512x512}/{actions,animations,apps,categories,devices,emblems,emotes,mimetypes,places,special,status} \
 	$RPM_BUILD_ROOT%{_docdir}/kde \
 	$RPM_BUILD_ROOT%{_desktopdir}/kde \
-	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,gl,hu,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,uk,zh_TW}/common \
+	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,gl,hu,id,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,uk,zh_TW}/common \
 	$RPM_BUILD_ROOT%{_kdedocdir}/en/kcontrol
 
 %clean
@@ -138,6 +138,8 @@ check_filesystem_dirs
 %lang(gl) %dir %{_kdedocdir}/gl/common
 %lang(hu) %dir %{_kdedocdir}/hu
 %lang(hu) %dir %{_kdedocdir}/hu/common
+%lang(id) %dir %{_kdedocdir}/id
+%lang(id) %dir %{_kdedocdir}/id/common
 %lang(it) %dir %{_kdedocdir}/it
 %lang(it) %dir %{_kdedocdir}/it/common
 %lang(ja) %dir %{_kdedocdir}/ja
