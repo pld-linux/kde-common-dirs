@@ -162,6 +162,8 @@ check_filesystem_dirs
 %lang(sk) %dir %{_kdedocdir}/sk/common
 %lang(sl) %dir %{_kdedocdir}/sl
 %lang(sl) %dir %{_kdedocdir}/sl/common
+%lang(sl) %dir %{_kdedocdir}/sq
+%lang(sl) %dir %{_kdedocdir}/sq/common
 %lang(sv) %dir %{_kdedocdir}/sv
 %lang(sv) %dir %{_kdedocdir}/sv/common
 %lang(tr) %dir %{_kdedocdir}/tr
