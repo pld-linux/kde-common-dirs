@@ -2,7 +2,7 @@ Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
 Version:	0.8
-Release:	10
+Release:	11
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
