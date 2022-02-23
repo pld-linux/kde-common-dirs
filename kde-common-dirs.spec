@@ -1,8 +1,8 @@
 Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
-Version:	0.8
-Release:	12
+Version:	0.9
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
@@ -50,7 +50,7 @@ install -d \
 	$RPM_BUILD_ROOT%{_iconsdir}/crystalsvg/{8x8,16x16,22x22,32x32,48x48,64x64,128x128,512x512}/{actions,animations,apps,categories,devices,emblems,emotes,mimetypes,places,special,status} \
 	$RPM_BUILD_ROOT%{_docdir}/kde \
 	$RPM_BUILD_ROOT%{_desktopdir}/kde \
-	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,gl,hu,id,it,ja,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sq,sv,tr,uk,zh_CN,zh_TW}/common \
+	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,gl,hu,id,it,ja,ko,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sq,sr,sr@latin,sv,tr,uk,zh_CN,zh_TW}/common \
 	$RPM_BUILD_ROOT%{_kdedocdir}/en/kcontrol
 
 %clean
@@ -144,6 +144,8 @@ check_filesystem_dirs
 %lang(it) %dir %{_kdedocdir}/it/common
 %lang(ja) %dir %{_kdedocdir}/ja
 %lang(ja) %dir %{_kdedocdir}/ja/common
+%lang(ja) %dir %{_kdedocdir}/ko
+%lang(ja) %dir %{_kdedocdir}/ko/common
 %lang(nb) %dir %{_kdedocdir}/nb
 %lang(nb) %dir %{_kdedocdir}/nb/common
 %lang(nl) %dir %{_kdedocdir}/nl
@@ -164,11 +166,17 @@ check_filesystem_dirs
 %lang(sl) %dir %{_kdedocdir}/sl/common
 %lang(sq) %dir %{_kdedocdir}/sq
 %lang(sq) %dir %{_kdedocdir}/sq/common
+%lang(sq) %dir %{_kdedocdir}/sr
+%lang(sq) %dir %{_kdedocdir}/sr/common
+%lang(sq) %dir %{_kdedocdir}/sr@latin
+%lang(sq) %dir %{_kdedocdir}/sr@latin/common
 %lang(sv) %dir %{_kdedocdir}/sv
 %lang(sv) %dir %{_kdedocdir}/sv/common
 %lang(tr) %dir %{_kdedocdir}/tr
 %lang(tr) %dir %{_kdedocdir}/tr/common
 %lang(uk) %dir %{_kdedocdir}/uk
 %lang(uk) %dir %{_kdedocdir}/uk/common
+%lang(zh_TW) %dir %{_kdedocdir}/zh_CN
+%lang(zh_TW) %dir %{_kdedocdir}/zh_CN/common
 %lang(zh_TW) %dir %{_kdedocdir}/zh_TW
 %lang(zh_TW) %dir %{_kdedocdir}/zh_TW/common
