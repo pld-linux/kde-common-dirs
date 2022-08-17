@@ -2,7 +2,7 @@ Summary:	K Desktop Environment - common directories
 Summary(pl.UTF-8):	Wspólne katalogi KDE (K Desktop Environment)
 Name:		kde-common-dirs
 Version:	0.9
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 URL:		http://www.kde.org/
@@ -50,7 +50,7 @@ install -d \
 	$RPM_BUILD_ROOT%{_iconsdir}/crystalsvg/{8x8,16x16,22x22,32x32,48x48,64x64,128x128,512x512}/{actions,animations,apps,categories,devices,emblems,emotes,mimetypes,places,special,status} \
 	$RPM_BUILD_ROOT%{_docdir}/kde \
 	$RPM_BUILD_ROOT%{_desktopdir}/kde \
-	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,cs,da,de,en,en_GB,en_US,es,et,fi,fr,gl,hu,id,it,ja,ko,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sq,sr,sr@latin,sv,tr,uk,zh_CN,zh_TW}/common \
+	$RPM_BUILD_ROOT%{_kdedocdir}/{ca,ca@valencia,cs,da,de,en,en_GB,en_US,es,et,fi,fr,gl,hu,id,it,ja,ko,nb,nl,pl,pt,pt_BR,ro,ru,sk,sl,sq,sr,sr@latin,sv,tr,uk,zh_CN,zh_TW}/common \
 	$RPM_BUILD_ROOT%{_kdedocdir}/en/kcontrol
 
 %clean
@@ -113,6 +113,8 @@ check_filesystem_dirs
 %{_iconsdir}/crystalsvg/*
 %lang(ca) %dir %{_kdedocdir}/ca
 %lang(ca) %dir %{_kdedocdir}/ca/common
+%lang(ca) %dir %{_kdedocdir}/ca@valencia
+%lang(ca) %dir %{_kdedocdir}/ca@valencia/common
 %lang(cs) %dir %{_kdedocdir}/cs
 %lang(cs) %dir %{_kdedocdir}/cs/common
 %lang(da) %dir %{_kdedocdir}/da
